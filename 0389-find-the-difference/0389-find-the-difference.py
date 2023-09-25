@@ -5,7 +5,9 @@ class Solution(object):
         :type t: str
         :rtype: str
         """
-        copy = t
-        for char in s:
-            copy = copy.replace(char, '', 1)
-        return copy
+        s_sum = 0
+        t_sum = 0
+        for i in range(0, len(t)):
+            s_sum += ord(s[i]) if i < len(s) else 0
+            t_sum += ord(t[i])
+        return chr(t_sum - s_sum)
