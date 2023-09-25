@@ -15,9 +15,9 @@ var calculate = function(s) {
             current.sum = num;
         } else {
             if (current.neg) {
-                current.sum -= num
+                current.sum -= num;
             } else {
-                current.sum += num
+                current.sum += num;
             }
         }
     }
@@ -42,10 +42,10 @@ var calculate = function(s) {
                 mem.push({
                     sum: undefined,
                     neg: false
-                })
+                });
             } else {
-                let fin = mem.pop().sum
-                sum(Number(fin))
+                let fin = mem.pop().sum;
+                sum(Number(fin));
             }
         } else if (!isNaN(Number(char))) {
             // NUMBER
@@ -60,5 +60,5 @@ var calculate = function(s) {
         }
         i ++;
     }
-    return mem.pop().sum
+    return mem.pop().sum;
 };
