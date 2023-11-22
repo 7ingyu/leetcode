@@ -3,8 +3,20 @@
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 var sortColors = function(nums) {
-    let str = nums.join('')
-    let colors = [0, 1, 2]
-    let counts = colors.map(n => str.match(new RegExp(n, 'g'))?.length || 0)
-    nums.splice(0, nums.length, ...colors.map((c, i) => String(c).repeat(counts[i])).join('').split(''))
+    let i = 0
+    let count = 0
+    
+    while (count < nums.length) {
+        let n = nums[i]
+        if (n === 0) {
+            nums.splice(i, 1)
+            nums.unshift(0)
+        } else if (n === 2) {
+            nums.splice(i, 1)
+            nums.push(2)
+            i -- 
+        }  
+        i ++
+        count ++
+    }
 };
