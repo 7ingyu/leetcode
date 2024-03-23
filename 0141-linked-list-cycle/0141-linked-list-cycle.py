@@ -14,13 +14,13 @@ class Solution(object):
             return False
         
         current = head
-        nodes = { head }
+        nodes = [head]
         
         while current.next is not None:
             current = current.next
-            if current in nodes:
-                return True
-            else:
-                nodes.add(current)
+            for el in nodes:
+                if current == el:
+                    return True
+            nodes.append(current)
         
         return False
